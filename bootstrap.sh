@@ -8,8 +8,8 @@ if [[ ! -f /usr/local/bin/brew ]]; then
     echo "Installing brew core:"
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-    echo "installing packages:"
-    brew install git coreutils boot2docker docker htop-osx iftop openssl openvpn packer wget tree
+    echo "Installing packages:"
+    brew install git coreutils binutils bash boot2docker docker htop-osx iftop openssl openvpn packer wget tree
 
     # Git settings
     git config --global user.name "Gerardo Rochín"
@@ -22,6 +22,7 @@ fi
 
 # Oh my zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
+    echo "Installing Oh my zsh:"
     curl -L http://install.ohmyz.sh | sh
 else
     echo "Oh my zsh is already installed"
