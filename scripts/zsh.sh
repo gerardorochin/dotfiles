@@ -7,6 +7,8 @@
 #
 set -e
 
+echo "Zsh"
+
 # check for zsh
 if test $(which zsh)
 then
@@ -31,6 +33,7 @@ then
     else
         echo "Oh my zsh is already installed"
     fi
+    echo -e "Done\n"
 else
     echo "zsh not installed"
 fi

@@ -1,4 +1,4 @@
-Gerardo Rochín dotfiles
-=======================
+dotfiles
+========
 
-sh bootstrap.sh
+bash bootstrap.sh

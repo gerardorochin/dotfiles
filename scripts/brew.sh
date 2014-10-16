@@ -7,6 +7,8 @@
 #
 set -e
 
+echo "Homebrew"
+
 # check for homebrew
 os=`uname`
 if [[ $os == "Darwin" ]]; then
@@ -37,6 +39,7 @@ if [[ $os == "Darwin" ]]; then
     else
         echo "Homebrew is already installed"
     fi
+    echo -e "Done\n"
 else
     echo "OS not Supported"
 fi

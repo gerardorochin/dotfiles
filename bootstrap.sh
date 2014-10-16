@@ -6,7 +6,7 @@
 #
 set -e
 
-echo "Dotfiles"
+echo -e "* Dotfiles\n"
 
 # scripts enabled
 declare -a sources=(
@@ -25,4 +25,4 @@ do
     fi
 done
 
-echo "Done."
+echo "** Done."

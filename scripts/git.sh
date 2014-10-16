@@ -7,6 +7,8 @@
 #
 set -e
 
+echo "Git"
+
 # check for git
 if test $(which git)
 then
@@ -17,6 +19,8 @@ then
     git config --global user.email gerardorochin@gmail.com
     git config --global color.ui true
     git config --global core.editor "vim"
+
+    echo -e "Done\n"
 else
     echo "Git not installed"
 fi
