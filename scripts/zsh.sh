@@ -35,5 +35,5 @@ then
     fi
     echo -e "Done\n"
 else
-    echo "zsh not installed"
+    echo "zsh not installed\n"
 fi
