@@ -12,6 +12,7 @@ echo "Dotfiles"
 declare -a sources=(
     brew
     git
+    zsh
 )
 
 # run scripts enabled
