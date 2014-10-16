@@ -7,6 +7,8 @@
 #
 set -e
 
+echo "Vim"
+
 # check for vim
 if test $(which vim)
 then
@@ -16,8 +18,13 @@ then
     # manage your runtimepath
 
     # install
-    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo "Install pathogen"
+    if [[ ! -d ~/.vim/autoload && ! -d ~/.vim/bundle ]]; then
+        mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+        curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    else
+        echo "pathogen is already installed"
+    fi
 
     # vim plugins (github)
     declare -a plugins=(
@@ -26,7 +33,7 @@ then
         scrooloose/nerdtree
     )
 
-    # run scripts enabled
+    echo "Install plugins"
     for plugin in "${plugins[@]}"
     do
         # get dest
@@ -35,8 +42,11 @@ then
         
         cd ~/.vim/bundle
         if [[ ! -d $dest ]]; then
+            echo "Installing ${plugin}"
             git clone git://github.com/$plugin.git
         else
+            echo "Plugin ${plugin} exists"
+            echo "Updating.."
             cd $dest
             git pull origin master
         fi
@@ -53,6 +63,7 @@ then
     if [[ -f  $vimrc ]]; then
         cp -f $vimrc ~/.vimrc
     fi
+    echo -e "Done\n"
 else
     echo "vim not installed"
 fi
