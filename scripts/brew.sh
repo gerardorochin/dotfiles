@@ -14,10 +14,10 @@ os=`uname`
 if [[ $os == "Darwin" ]]; then
     if test ! $(which brew)
     then
-        echo "Installing brew core:"
+        echo "Installing brew core"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-        echo "Installing brew packages:"
+        echo "Installing brew packages"
         brew install \
             bash \
             binutils \
@@ -41,5 +41,5 @@ if [[ $os == "Darwin" ]]; then
     fi
     echo -e "Done\n"
 else
-    echo "OS not Supported"
+    echo -e "OS not Supported\n"
 fi
