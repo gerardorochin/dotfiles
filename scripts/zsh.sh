@@ -7,7 +7,7 @@
 #
 set -e
 
-# check for git
+# check for zsh
 if test $(which zsh)
 then
     # Oh my zsh 

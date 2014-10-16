@@ -1,0 +1,52 @@
+scriptencoding utf-8
+set encoding=utf-8
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+set history=700
+
+set nocompatible
+syntax on
+
+set showmode
+
+set autoindent
+set smartindent
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set ruler
+
+set number
+set ignorecase
+set smartcase
+set hlsearch
+set backup
+set backupdir=~/vim/tmp/
+set nowrap
+set laststatus=2
+set cmdheight=2
+set cursorline
+set mouse=a
+set clipboard=unnamedplus
+au BufRead,BufNewFile Vagrantfile       set ft=ruby
+
+
+let g:airline_powerline_fonts=1
+set ambiwidth=double
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+hi IndentGuidesOdd  guibg=red   ctermbg=3
+hi IndentGuidesEven guibg=green ctermbg=4
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

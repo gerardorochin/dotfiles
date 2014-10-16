@@ -13,6 +13,7 @@ declare -a sources=(
     brew
     git
     zsh
+    vim
 )
 
 # run scripts enabled
