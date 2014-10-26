@@ -12,8 +12,15 @@ echo "Homebrew"
 os=`uname`
 if [[ $os == "Darwin" ]]; then
     # check for homebrew
-    if test ! $(which brew)
+    if test ! $(which brew) || [[ $1 -eq "-f" ]]
     then
+        
+        if [[ $1 -eq "-eq" ]]; then
+                echo "Force mode"
+                echo "Removing brew"
+		rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup		
+	fi
+
         echo "Installing brew core"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -29,7 +36,6 @@ if [[ $os == "Darwin" ]]; then
             iftop \
             openssl \
             openvpn \
-            packer \
             pwgen \
             ssh-copy-id \
             tree \

@@ -21,7 +21,7 @@ for src in "${sources[@]}"
 do
     script="scripts/${src}.sh"
     if [[ -f  $script ]]; then
-        source $script
+        . $script $1
     fi
 done
 
