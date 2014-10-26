@@ -35,7 +35,6 @@ if [[ $os == "Darwin" ]]; then
             htop-osx \
             iftop \
             openssl \
-            openvpn \
             pwgen \
             ssh-copy-id \
             tree \
