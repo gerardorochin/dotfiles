@@ -15,21 +15,18 @@ then
     # Oh my zsh 
     # http://ohmyz.sh/
     # framework for managing your ZSH configuration.
+
+    if [[ $1 -eq "-f" ]]; then
+        echo "Force mode"
+        echo "Removing of oh-my-zsh if exists!"
+        rm -fdR ~/.oh-my-zsh
+    fi
+    
     if [[ ! -d ~/.oh-my-zsh ]]; then
         echo "Installing Oh my zsh:"
         curl -L http://install.ohmyz.sh | sh
-
-        # config dir
-        if [[ -d ../configs ]]; then
-            zshrc=../configs/zshrc
-        else
-            zshrc=configs/zshrc
-        fi
-
-        # .zshrc file
-        if [[ -f  $zshrc ]]; then
-            cp -f $zshrc ~/.zshrc
-        fi
+        # zshrc file
+        ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
     else
         echo "Oh my zsh is already installed"
     fi

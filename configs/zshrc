@@ -18,7 +18,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -30,7 +30,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -43,15 +43,22 @@ ZSH_THEME="robbyrussell"
 
 DISABLE_UPDATE_PROMPT=true
 
-plugins=(osx git git-extras themes vagrant sublime brew node npm python sublime cp docker gitignore)
+plugins=(osx git git-extras themes vagrant brew node npm python sublime cp docker gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export CLICOLOR=1
-export LSCOLORS=exfxcxdxbxegedabagacad
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+# Aliases
+alias dotfiles="cd ~/.dotfiles"
+alias vi="vim"
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
 
+# Enable Colors
+export CLICOLOR=1;
+export LSCOLORS=exfxcxdxbxegedabagacad;
+
+export DOCKER_HOST=tcp://127.0.0.1:2375
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export EDITOR=/usr/bin/vim
 
@@ -59,4 +66,3 @@ fpath=($HOME/.zsh/func $fpath)
 typeset -U fpath
 
 source "`brew --prefix grc`/etc/grc.bashrc"
-export DOCKER_HOST=tcp://127.0.0.1:2375
