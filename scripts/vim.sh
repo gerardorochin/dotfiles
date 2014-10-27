@@ -52,17 +52,9 @@ then
         fi
     done
 
-    # config dir
-    if [[ -d ../configs ]]; then
-        vimrc=../configs/vimrc
-    else
-        vimrc=configs/vimrc
-    fi
+    # vimrc file
+    ln -s ~/.dotfiles/config/vimrc ~/.vimrc
 
-    # .vimrc file
-    if [[ -f  $vimrc ]]; then
-        cp -f $vimrc ~/.vimrc
-    fi
     echo -e "Done\n"
 else
     echo "vim not installed"

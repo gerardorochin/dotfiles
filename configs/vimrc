@@ -1,52 +1,100 @@
-scriptencoding utf-8
-set encoding=utf-8
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Load pathogen plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
-syntax enable
-set background=dark
-colorscheme solarized
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
 
-set history=700
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
 
+" No compatible
 set nocompatible
-syntax on
 
-set showmode
+" Sets how many lines of history VIM has to remember
+set history=500
 
+" Enable filetype plugins
+filetype indent on
+filetype plugin on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Identation
 set autoindent
 set smartindent
 
+" Convert tab to spaces
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+" Backup files
+set backup
+set backupdir=~/.vim/tmp/
+
+" Clipboard sharing
+set clipboard=unnamed
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set noswapfile
+set nowb
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable 
+
+try
+    colorscheme solarized
+catch
+endtry
+
+set background=dark
+
+" Set Vagrantfile colors
+au BufRead,BufNewFile Vagrantfile set ft=ruby
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable line number
+set number
+
+" Enable mouse cursor
+set mouse=a
+
+" Enable ruler
 set ruler
 
-set number
-set ignorecase
-set smartcase
-set hlsearch
-set backup
-set backupdir=~/vim/tmp/
-set nowrap
+" show statusbar
 set laststatus=2
-set cmdheight=2
+
+" Highlight all search pattern matches
+set hlsearch
+
+" Highlight current line
 set cursorline
-set mouse=a
-set clipboard=unnamedplus
-au BufRead,BufNewFile Vagrantfile       set ft=ruby
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable
 let g:airline_powerline_fonts=1
 set ambiwidth=double
 
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-hi IndentGuidesOdd  guibg=red   ctermbg=3
-hi IndentGuidesEven guibg=green ctermbg=4
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
