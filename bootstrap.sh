@@ -5,6 +5,8 @@
 # Install and configure full environment
 #
 set -e
+sudo -v
+clear
 
 echo -e "* Dotfiles\n"
 
