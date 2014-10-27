@@ -53,7 +53,7 @@ then
     done
 
     # vimrc file
-    ln -s ~/.dotfiles/config/vimrc ~/.vimrc
+    ln -sfn ~/.dotfiles/configs/vimrc ~/.vimrc
 
     echo -e "Done\n"
 else
