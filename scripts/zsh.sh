@@ -27,6 +27,7 @@ then
         curl -L http://install.ohmyz.sh | sh
         # zshrc file
         ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
+        source ~/.zshrc
     else
         echo "Oh my zsh is already installed"
     fi
