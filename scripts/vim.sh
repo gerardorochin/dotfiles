@@ -28,9 +28,12 @@ then
 
     # vim plugins (github)
     declare -a plugins=(
+        airblade/vim-gitgutter
         altercation/vim-colors-solarized
         bling/vim-airline
+        rstacruz/sparkup
         scrooloose/nerdtree
+        terryma/vim-multiple-cursors
     )
 
     echo "Install plugins"
