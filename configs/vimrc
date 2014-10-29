@@ -1,3 +1,4 @@
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Load pathogen plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -8,6 +9,7 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+scriptencoding utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -48,6 +50,7 @@ set clipboard=unnamed
 set nobackup
 set noswapfile
 set nowb
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,11 +88,11 @@ set hlsearch
 " Highlight current line
 set cursorline
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 set ambiwidth=double
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
