@@ -18,12 +18,12 @@ if [[ $os == "Darwin" ]]; then
         if [[ $1 -eq "-eq" ]]; then
                 echo "Force mode"
                 echo "Removing brew"
-		        rm -rf /usr/local/Cellar /usr/local/.git
+		sudo rm -rf /usr/local/Cellar /usr/local/.git
                 brew prune || exit 0
                 brew cleanup || exit 0
-                rm -rf ~/Library/Caches/Homebrew
-                rm -rf ~/Library/Logs/Homebrew 
-                rm -rf /Library/Caches/Homebrew 
+                sudo rm -rf ~/Library/Caches/Homebrew
+                sudo rm -rf ~/Library/Logs/Homebrew 
+                sudo rm -rf /Library/Caches/Homebrew 
 	    fi
 
         echo "Installing brew core"
