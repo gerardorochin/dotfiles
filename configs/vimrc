@@ -1,4 +1,3 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Load pathogen plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,3 +100,19 @@ set ambiwidth=double
 " Enable
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VimGutter  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fix colors for solarized
+highlight clear SignColumn
+highlight SignColumn ctermfg=DarkGrey
+highlight GitGutterAdd ctermfg=DarkGreen
+highlight GitGutterChange ctermfg=DarkYellow
+highlight GitGutterDelete ctermfg=DarkRed
+highlight GitGutterChangeDelete ctermfg=DarkYellow
+
+" Realtime?
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
