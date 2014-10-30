@@ -43,6 +43,20 @@ set backupdir=~/.vim/tmp/
 set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Buffer and Tabs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change between buffers without saving
+set hidden
+
+" Buffers
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+
+" Tabs
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -87,6 +101,7 @@ set hlsearch
 " Highlight current line
 set cursorline
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable
@@ -100,7 +115,6 @@ set ambiwidth=double
 " Enable
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimGutter  
