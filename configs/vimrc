@@ -8,6 +8,7 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+scriptencoding utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -48,6 +49,7 @@ set clipboard=unnamed
 set nobackup
 set noswapfile
 set nowb
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,11 +87,11 @@ set hlsearch
 " Highlight current line
 set cursorline
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 set ambiwidth=double
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,3 +100,19 @@ set ambiwidth=double
 " Enable
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VimGutter  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fix colors for solarized
+highlight clear SignColumn
+highlight SignColumn ctermfg=DarkGrey
+highlight GitGutterAdd ctermfg=DarkGreen
+highlight GitGutterChange ctermfg=DarkYellow
+highlight GitGutterDelete ctermfg=DarkRed
+highlight GitGutterChangeDelete ctermfg=DarkYellow
+
+" Realtime?
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
