@@ -68,7 +68,7 @@ set nowb
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 try
     colorscheme solarized
@@ -76,6 +76,11 @@ catch
 endtry
 
 set background=dark
+
+" Highlight trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " Set Vagrantfile colors
 au BufRead,BufNewFile Vagrantfile set ft=ruby
@@ -102,22 +107,25 @@ set hlsearch
 set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline 
+" => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable default showmode vim
+set noshowmode
+
 " Enable
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 set ambiwidth=double
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NERDTree  
+" => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimGutter  
+" => VimGutter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fix colors for solarized
 highlight clear SignColumn
