@@ -85,6 +85,7 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 " Set Vagrantfile colors
 au BufRead,BufNewFile Vagrantfile set ft=ruby
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,6 +106,9 @@ set hlsearch
 
 " Highlight current line
 set cursorline
+
+" Live Search
+set incsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
