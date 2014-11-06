@@ -1,13 +1,16 @@
 dotfiles
 ========
 
-install:
+install all:
 
     git clone git@github.com:gerardorochin/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     ./bootstrap.sh
 
-force mode:
+run standalone script:
+
+    ./scripts/SCRIPTNAME.sh
+
+force:
 
     ./bootstrap.sh -f
-
