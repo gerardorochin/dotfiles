@@ -53,6 +53,7 @@ alias dotfiles="cd ~/.dotfiles"
 alias vi="vim"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
+alias projects="cd ~/Projects"
 
 # Enable Colors
 export CLICOLOR=1;
