@@ -14,7 +14,6 @@ if [[ $os == "Darwin" ]]; then
     # check for homebrew
     if test ! $(which brew) || [[ $1 -eq "-f" ]]
     then
-        
         if [[ $1 -eq "-eq" ]]; then
                 echo "Force mode"
                 echo "Removing brew"
@@ -22,8 +21,8 @@ if [[ $os == "Darwin" ]]; then
                 brew prune || exit 0
                 brew cleanup || exit 0
                 sudo rm -rf ~/Library/Caches/Homebrew
-                sudo rm -rf ~/Library/Logs/Homebrew 
-                sudo rm -rf /Library/Caches/Homebrew 
+                sudo rm -rf ~/Library/Logs/Homebrew
+                sudo rm -rf /Library/Caches/Homebrew
 	    fi
 
         echo "Installing brew core"
@@ -40,6 +39,7 @@ if [[ $os == "Darwin" ]]; then
             grc \
             htop-osx \
             iftop \
+            mysql --client-only \
             openssl \
             pwgen \
             ssh-copy-id \
@@ -50,7 +50,7 @@ if [[ $os == "Darwin" ]]; then
        if [[ -f /usr/local/bin/zsh ]]; then
            echo "Enable zsh on /etc/shells"
            echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-       fi    
+       fi
     else
         echo "Homebrew is already installed"
     fi
