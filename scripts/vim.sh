@@ -12,7 +12,6 @@ echo "Vim"
 # check for vim
 if test $(which vim)
 then
-    
     # vim-pathogen
     # https://github.com/tpope/vim-pathogen
     # manage your runtimepath
@@ -31,6 +30,7 @@ then
         airblade/vim-gitgutter
         altercation/vim-colors-solarized
         bling/vim-airline
+        mattn/emmet-vim
         rstacruz/sparkup
         scrooloose/nerdtree
         terryma/vim-multiple-cursors
@@ -42,7 +42,7 @@ then
         # get dest
         dest=${plugin#*/}
         dest=${dest%%.git}
-        
+
         cd ~/.vim/bundle
         if [[ ! -d $dest ]]; then
             echo "Installing ${plugin}"
