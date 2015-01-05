@@ -27,6 +27,7 @@ then
 
     # vim plugins (github)
     declare -a plugins=(
+        Raimondi/delimitMate
         airblade/vim-gitgutter
         altercation/vim-colors-solarized
         bling/vim-airline
