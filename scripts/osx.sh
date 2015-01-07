@@ -21,9 +21,9 @@ os=`uname`
     ###############################################################################
 
     # Set computer name (as done via System Preferences → Sharing)
-    sudo scutil --set ComputerName "Gerardo Rochín"
-    sudo scutil --set HostName "gerardo-rochin"
-    sudo scutil --set LocalHostName "gerardo-rochin"
+    sudo scutil --set ComputerName "0x4B1D"
+    sudo scutil --set HostName "0x4B1D"
+    sudo scutil --set LocalHostName "0x4B1D"
 
     # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
     for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
