@@ -50,6 +50,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # Aliases
 alias dotfiles="cd ~/.dotfiles"
+alias dotfiles_update='ORIGINAL_PATH=${PWD} && cd ~/.dotfiles && git stash && git pull origin master && git stash apply stash@{0} > /dev/null && cd ${ORIGINAL_PATH}'
 alias vi="vim"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
