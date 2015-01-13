@@ -55,6 +55,8 @@ alias vi="vim"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias projects="cd ~/Projects"
+alias myip="curl curlmyip.com 2> /dev/null || echo 0.0.0.0"
+alias reload="source ~/.zshrc"
 
 # Enable Colors
 export CLICOLOR=1;
