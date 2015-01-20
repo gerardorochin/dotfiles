@@ -12,7 +12,7 @@ echo "Zsh"
 # check for zsh
 if test $(which zsh)
 then
-    # Oh my zsh 
+    # Oh my zsh
     # http://ohmyz.sh/
     # framework for managing your ZSH configuration.
 
@@ -21,13 +21,14 @@ then
         echo "Removing of oh-my-zsh if exists!"
         rm -fdR ~/.oh-my-zsh
     fi
-    
+
     if [[ ! -d ~/.oh-my-zsh ]]; then
         echo "Installing Oh my zsh:"
         curl -L http://install.ohmyz.sh | sh
         # zshrc file
         ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
         source ~/.zshrc
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     else
         echo "Oh my zsh is already installed"
     fi

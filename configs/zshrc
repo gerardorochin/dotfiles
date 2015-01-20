@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 
 DISABLE_UPDATE_PROMPT=true
 
-plugins=(osx git git-extras themes vagrant brew node npm python sublime cp docker gitignore)
+plugins=(osx git git-extras themes vagrant brew node npm python sublime cp docker gitignore zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
