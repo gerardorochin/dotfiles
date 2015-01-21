@@ -58,6 +58,7 @@ then
 
     # vimrc file
     ln -sfn ~/.dotfiles/configs/vimrc ~/.vimrc
+    ln -sfn ~/.dotfiles/configs/gvimrc ~/.gvimrc
 
     echo -e "Done\n"
 else
