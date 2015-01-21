@@ -88,6 +88,9 @@ au BufRead,BufNewFile Vagrantfile set ft=ruby
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable Wildmenu
+set wildmenu
+
 " Enable line number
 set number
 
