@@ -59,7 +59,7 @@ if [[ $os == "Darwin" ]]; then
        echo "Installing brew cask"
        brew install caskroom/cask/brew-cask
 
-       echo "Installing brew packages"
+       echo "Installing brew cask packages"
        brew cask install \
            google-chrome \
            iterm2 \
@@ -67,6 +67,12 @@ if [[ $os == "Darwin" ]]; then
            sequel-pro \
            spotify \
            vagrant
+
+       echo "Installing brew cask fonts"
+       brew tap caskroom/fonts
+       brew cask install \
+           font-source-code-pro \
+           font-source-code-pro-for-powerline
 
        echo "Brew cask cleanup"
        brew cask cleanup
