@@ -47,10 +47,30 @@ if [[ $os == "Darwin" ]]; then
             vim \
             wget \
             zsh
+
+       echo "Brew cleanup"
+       brew cleanup
+
        if [[ -f /usr/local/bin/zsh ]]; then
            echo "Enable zsh on /etc/shells"
            echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
        fi
+
+       echo "Installing brew cask"
+       brew install caskroom/cask/brew-cask
+
+       echo "Installing brew packages"
+       brew cask install \
+           google-chrome \
+           iterm2 \
+           macvim \
+           sequel-pro \
+           spotify \
+           vagrant
+
+       echo "Brew cask cleanup"
+       brew cask cleanup
+
     else
         echo "Homebrew is already installed"
     fi
