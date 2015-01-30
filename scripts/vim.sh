@@ -35,6 +35,7 @@ then
         rstacruz/sparkup
         scrooloose/nerdtree
         terryma/vim-multiple-cursors
+        vim-fugitive
     )
 
     echo "Install plugins"
