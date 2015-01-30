@@ -29,6 +29,7 @@ set autoread
 " Identation
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 " Convert tab to spaces
 set expandtab
