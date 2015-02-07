@@ -126,7 +126,7 @@ set noshowmode
 " Enable
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-set ambiwidth=double
+"set ambiwidth=double
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
@@ -149,3 +149,10 @@ highlight GitGutterChangeDelete ctermfg=DarkYellow
 " Realtime?
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-indent-guides
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1

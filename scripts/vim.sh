@@ -32,6 +32,7 @@ then
         altercation/vim-colors-solarized
         bling/vim-airline
         mattn/emmet-vim
+        nathanaelkane/vim-indent-guides
         rstacruz/sparkup
         scrooloose/nerdtree
         terryma/vim-multiple-cursors
