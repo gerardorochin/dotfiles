@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # OSX
-# 
+#
 # The original idea (and a couple settings) were grabbed from:
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 # Sets reasonable OS X defaults.
@@ -10,6 +10,9 @@
 set -e
 
 echo -e "OSX"
+
+echo -e "Create symbolic link ssh"
+ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
 
 os=`uname`
     if [[ $os == "Darwin" ]]; then
