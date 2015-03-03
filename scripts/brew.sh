@@ -17,7 +17,7 @@ if [[ $os == "Darwin" ]]; then
         if [[ $1 -eq "-eq" ]]; then
                 echo "Force mode"
                 echo "Removing brew"
-		sudo rm -rf /usr/local/Cellar /usr/local/.git
+                sudo rm -rf /usr/local/Cellar /usr/local/.git
                 brew prune || exit 0
                 brew cleanup || exit 0
                 sudo rm -rf ~/Library/Caches/Homebrew
@@ -35,6 +35,7 @@ if [[ $os == "Darwin" ]]; then
             boot2docker \
             coreutils \
             docker \
+            docker-compose \
             git \
             grc \
             htop-osx \
