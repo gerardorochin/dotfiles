@@ -20,7 +20,7 @@ then
     echo "Install pathogen"
     if [[ ! -d ~/.vim/autoload && ! -d ~/.vim/bundle ]]; then
         mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-        curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+        curl --insecure -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     else
         echo "pathogen is already installed"
     fi
