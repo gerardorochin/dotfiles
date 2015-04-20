@@ -24,7 +24,7 @@ then
 
     if [[ ! -d ~/.oh-my-zsh ]]; then
         echo "Installing Oh my zsh:"
-        curl -L http://install.ohmyz.sh | sh
+        curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
         # zshrc file
         ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
         source ~/.zshrc
