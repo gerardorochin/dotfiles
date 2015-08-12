@@ -31,6 +31,7 @@ then
         airblade/vim-gitgutter
         altercation/vim-colors-solarized
         bling/vim-airline
+        editorconfig/editorconfig-vim
         mattn/emmet-vim
         nathanaelkane/vim-indent-guides
         rstacruz/sparkup
