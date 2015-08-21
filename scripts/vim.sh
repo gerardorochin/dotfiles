@@ -36,6 +36,7 @@ then
         nathanaelkane/vim-indent-guides
         rstacruz/sparkup
         scrooloose/nerdtree
+        scrooloose/syntastic
         terryma/vim-multiple-cursors
         tpope/vim-fugitive
     )
