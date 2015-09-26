@@ -65,11 +65,11 @@ alias reload="source ~/.zshrc"
 export CLICOLOR=1;
 export LSCOLORS=exfxcxdxbxegedabagacad;
 
-# Boot2docker
-export DOCKER_HOST=tcp://127.0.0.1:2375
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/Gerardo/.boot2docker/certs/boot2docker-vm
+# Default Docker Machine
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/Gerardo/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export EDITOR=/usr/bin/vim
