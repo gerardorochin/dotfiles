@@ -32,10 +32,10 @@ if [[ $os == "Darwin" ]]; then
         brew install \
             bash \
             binutils \
-            boot2docker \
             coreutils \
             docker \
             docker-compose \
+            docker-machine \
             git \
             grc \
             htop-osx \
