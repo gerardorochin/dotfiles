@@ -40,7 +40,6 @@ if [[ $os == "Darwin" ]]; then
             grc \
             htop-osx \
             iftop \
-            mysql --client-only \
             openssl \
             pwgen \
             ssh-copy-id \
