@@ -12,7 +12,7 @@ set -e
 echo -e "OSX"
 
 echo -e "Create symbolic link ssh"
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
+ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
 
 os=`uname`
     if [[ $os == "Darwin" ]]; then
@@ -119,17 +119,14 @@ os=`uname`
 
     # Enable snap-to-grid for icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
     # Increase grid spacing for icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
 
     # Increase the size of icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
     # Use AirDrop over every interface. srsly this should be a default.
