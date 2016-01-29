@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Font
 set anti enc=utf-8
-set guifont=Sauce\ Code\ Powerline\ Semibold:h14
+set guifont=Source\ Code\ Pro\ Semibold:h14
 
 # Transparency
 set transp=2
