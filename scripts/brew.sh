@@ -56,6 +56,7 @@ if [[ $os == "Darwin" ]]; then
            sequel-pro \
            spotify \
            vagrant
+           virtualbox \
 
        echo "Installing brew cask fonts"
        brew tap caskroom/fonts
