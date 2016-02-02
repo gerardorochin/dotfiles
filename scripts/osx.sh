@@ -28,6 +28,12 @@ os=`uname`
     sudo scutil --set HostName "0x4B1D"
     sudo scutil --set LocalHostName "0x4B1D"
 
+    # Disable Guest user
+    sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
+
+    # Set Clock to 12 hours
+    defaults write com.apple.menuextra.clock "DateFormat" "h:mm"
+
     # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
     for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
         defaults write "${domain}" dontAutoLoad -array \
@@ -64,6 +70,12 @@ os=`uname`
     # Use scroll gesture with the Ctrl (^) modifier key to zoom
     defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
     defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+    # Disable press-and-hold for keys in favor of key repeat
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+    # Set a blazingly fast keyboard repeat rate
+    defaults write NSGlobalDomain KeyRepeat -int 0
 
     # Follow the keyboard focus while zoomed in
     defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
@@ -193,6 +205,9 @@ os=`uname`
     # Sort Activity Monitor results by CPU usage
     defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
     defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+    # iTerm
+    open ~/.dotfiles/init/Solarized\ Dark.itermcolors
 
     ###############################################################################
     # Kill affected applications                                                  #
