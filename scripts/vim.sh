@@ -65,6 +65,9 @@ then
     ln -sfn ~/.dotfiles/configs/vimrc ~/.vimrc
     ln -sfn ~/.dotfiles/configs/gvimrc ~/.gvimrc
 
+    # Dockerfile syntax
+    ln -sfn ~/.dotfiles/init/Dockerfile ~/.vim/bundle
+
     echo -e "Done\n"
 else
     echo "vim not installed"
