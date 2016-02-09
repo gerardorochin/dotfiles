@@ -29,6 +29,7 @@ if [[ $os == "Darwin" ]]; then
             grc \
             htop-osx \
             iftop \
+            most \
             openssl \
             pwgen \
             ssh-copy-id \
