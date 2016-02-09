@@ -30,7 +30,6 @@ then
         Raimondi/delimitMate
         airblade/vim-gitgutter
         altercation/vim-colors-solarized
-        bling/vim-airline
         editorconfig/editorconfig-vim
         mattn/emmet-vim
         nathanaelkane/vim-indent-guides
@@ -39,6 +38,8 @@ then
         scrooloose/syntastic
         terryma/vim-multiple-cursors
         tpope/vim-fugitive
+        vim-airline/vim-airline
+        vim-airline/vim-airline-themes
     )
 
     echo "Install plugins"
