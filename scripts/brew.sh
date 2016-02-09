@@ -75,7 +75,8 @@ if [[ $os == "Darwin" ]]; then
            font-source-code-pro \
            font-source-code-pro-for-powerline
 
-       echo "Brew cask cleanup"
+       echo "Brew cleanup"
+       brew cleanup
        brew cask cleanup
 
     else
