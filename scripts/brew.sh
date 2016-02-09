@@ -14,17 +14,6 @@ if [[ $os == "Darwin" ]]; then
     # check for homebrew
     if test ! $(which brew) || [[ $1 -eq "-f" ]]
     then
-        if [[ $1 -eq "-eq" ]]; then
-                echo "Force mode"
-                echo "Removing brew"
-                sudo rm -rf /usr/local/Cellar /usr/local/.git
-                brew prune || exit 0
-                brew cleanup || exit 0
-                sudo rm -rf ~/Library/Caches/Homebrew
-                sudo rm -rf ~/Library/Logs/Homebrew
-                sudo rm -rf /Library/Caches/Homebrew
-	    fi
-
         echo "Installing brew core"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -32,15 +21,14 @@ if [[ $os == "Darwin" ]]; then
         brew install \
             bash \
             binutils \
-            boot2docker \
             coreutils \
             docker \
             docker-compose \
+            docker-machine \
             git \
             grc \
             htop-osx \
             iftop \
-            mysql --client-only \
             openssl \
             pwgen \
             ssh-copy-id \
@@ -68,12 +56,12 @@ if [[ $os == "Darwin" ]]; then
            sequel-pro \
            spotify \
            vagrant
+           virtualbox \
 
        echo "Installing brew cask fonts"
        brew tap caskroom/fonts
        brew cask install \
-           font-source-code-pro \
-           font-source-code-pro-for-powerline
+           font-source-code-pro
 
        echo "Brew cleanup"
        brew cleanup

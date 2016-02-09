@@ -12,7 +12,7 @@ set -e
 echo -e "OSX"
 
 echo -e "Create symbolic link ssh"
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
+ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
 
 os=`uname`
     if [[ $os == "Darwin" ]]; then
@@ -27,6 +27,12 @@ os=`uname`
     sudo scutil --set ComputerName "0x4B1D"
     sudo scutil --set HostName "0x4B1D"
     sudo scutil --set LocalHostName "0x4B1D"
+
+    # Disable Guest user
+    sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
+
+    # Set Clock to 12 hours
+    defaults write com.apple.menuextra.clock "DateFormat" "h:mm"
 
     # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
     for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -64,6 +70,12 @@ os=`uname`
     # Use scroll gesture with the Ctrl (^) modifier key to zoom
     defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
     defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+    # Disable press-and-hold for keys in favor of key repeat
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+    # Set a blazingly fast keyboard repeat rate
+    defaults write NSGlobalDomain KeyRepeat -int 0
 
     # Follow the keyboard focus while zoomed in
     defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
@@ -119,17 +131,14 @@ os=`uname`
 
     # Enable snap-to-grid for icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
     # Increase grid spacing for icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
 
     # Increase the size of icons on the desktop and in other icon views
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
     # Use AirDrop over every interface. srsly this should be a default.
@@ -196,6 +205,9 @@ os=`uname`
     # Sort Activity Monitor results by CPU usage
     defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
     defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+    # iTerm
+    open ~/.dotfiles/init/Solarized\ Dark.itermcolors
 
     ###############################################################################
     # Kill affected applications                                                  #
