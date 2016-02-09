@@ -74,6 +74,7 @@ export DOCKER_MACHINE_NAME="default"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export EDITOR="/usr/local/bin/vim"
 export PAGER="/usr/local/bin/most"
+export GIT_PAGER="/usr/bin/less"
 
 # Locale
 export LANG="en_US.UTF-8"
