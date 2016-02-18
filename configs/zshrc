@@ -67,10 +67,7 @@ export CLICOLOR=1;
 export LSCOLORS=exfxcxdxbxegedabagacad;
 
 # Default Docker Machine
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/Gerardo/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+eval $(docker-machine env default)
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export EDITOR="/usr/local/bin/vim"
