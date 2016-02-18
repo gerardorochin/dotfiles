@@ -60,6 +60,7 @@ alias zshrc="vim ~/.zshrc"
 alias projects="cd ~/Projects"
 alias myip="curl curlmyip.com 2> /dev/null || echo 0.0.0.0"
 alias reload="source ~/.zshrc"
+alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 
 # Enable Colors
 export CLICOLOR=1;
