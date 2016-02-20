@@ -66,9 +66,6 @@ alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework/Vers
 export CLICOLOR=1;
 export LSCOLORS=exfxcxdxbxegedabagacad;
 
-# Default Docker Machine
-eval $(docker-machine env default)
-
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export EDITOR="/usr/local/bin/vim"
 export PAGER="/usr/local/bin/most"
