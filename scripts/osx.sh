@@ -19,6 +19,9 @@ os=`uname`
     # Ask for the administrator password upfront
     sudo -v
 
+    # Software Update
+    sudo softwareupdate -i -a
+
     ###############################################################################
     # General UI/UX                                                               #
     ###############################################################################
