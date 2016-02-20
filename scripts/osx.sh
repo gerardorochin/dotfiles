@@ -34,6 +34,9 @@ os=`uname`
     # Disable Guest user
     sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
 
+    # Disable System UI Audio Sound Effects
+    defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+
     # Set Clock to 12 hours
     defaults write com.apple.menuextra.clock "DateFormat" "h:mm"
 
