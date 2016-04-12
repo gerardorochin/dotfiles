@@ -26,6 +26,7 @@ if [[ $os == "Darwin" ]]; then
             docker-compose \
             docker-machine \
             git \
+            gpg \
             grc \
             htop-osx \
             iftop \

@@ -12,7 +12,8 @@ set -e
 echo -e "OSX"
 
 echo -e "Create symbolic link ssh"
-ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh .ssh
+ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh ~/.ssh
+ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/gnupg ~/.gnupg
 
 os=`uname`
     if [[ $os == "Darwin" ]]; then
