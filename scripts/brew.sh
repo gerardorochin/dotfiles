@@ -22,9 +22,6 @@ if [[ $os == "Darwin" ]]; then
             bash \
             binutils \
             coreutils \
-            docker \
-            docker-compose \
-            docker-machine \
             git \
             gpg \
             grc \
