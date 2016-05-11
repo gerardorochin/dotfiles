@@ -157,9 +157,13 @@ highlight GitGutterChange ctermfg=DarkYellow
 highlight GitGutterDelete ctermfg=DarkRed
 highlight GitGutterChangeDelete ctermfg=DarkYellow
 
-" Realtime?
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+" Update in Realtime
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+
+" Hunks Mappings
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-indent-guides
