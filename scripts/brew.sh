@@ -24,11 +24,13 @@ if [[ $os == "Darwin" ]]; then
             coreutils \
             git \
             gpg \
+            gpg-agent \
             grc \
             htop-osx \
             iftop \
             most \
             openssl \
+            pinentry-mac \
             pwgen \
             ssh-copy-id \
             tree \
