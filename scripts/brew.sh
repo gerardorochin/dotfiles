@@ -55,9 +55,7 @@ if [[ $os == "Darwin" ]]; then
            iterm2 \
            macvim \
            sequel-pro \
-           spotify \
-           vagrant \
-           virtualbox
+           spotify
 
        echo "Installing brew cask fonts"
        brew tap caskroom/fonts
