@@ -28,6 +28,7 @@ if [[ $os == "Darwin" ]]; then
             grc \
             htop-osx \
             iftop \
+            macvim \
             most \
             openssl \
             pinentry-mac \
@@ -37,6 +38,8 @@ if [[ $os == "Darwin" ]]; then
             vim \
             wget \
             zsh
+
+       brew linkapps macvim
 
        echo "Brew cleanup"
        brew cleanup
@@ -53,7 +56,6 @@ if [[ $os == "Darwin" ]]; then
        brew cask install \
            google-chrome \
            iterm2 \
-           macvim \
            sequel-pro \
            spotify
 
