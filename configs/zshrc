@@ -97,4 +97,9 @@ bindkey '^[[1;9D' backward-word
 fpath=($HOME/.zsh/func $fpath)
 typeset -U fpath
 
-source "`brew --prefix grc`/etc/grc.bashrc"
+
+source /usr/local/etc/grc.bashrc.default
+
+if [[ -x `which grc` ]]; then
+    alias grc='grc --colour=auto'
+fi
