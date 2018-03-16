@@ -33,6 +33,7 @@ if [[ $os == "Darwin" ]]; then
             openssl \
             pinentry-mac \
             pwgen \
+            speedtest-cli \
             ssh-copy-id \
             tree \
             vim \
