@@ -19,6 +19,7 @@ if [[ $os == "Darwin" ]]; then
 
         echo "Installing brew packages"
         brew install \
+            ansible \
             bash \
             binutils \
             coreutils \
