@@ -33,6 +33,7 @@ then
         editorconfig/editorconfig-vim
         mattn/emmet-vim
         nathanaelkane/vim-indent-guides
+        pearofducks/ansible-vim
         scrooloose/nerdtree
         scrooloose/syntastic
         terryma/vim-multiple-cursors
