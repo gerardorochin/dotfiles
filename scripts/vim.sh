@@ -32,13 +32,15 @@ then
         altercation/vim-colors-solarized
         editorconfig/editorconfig-vim
         mattn/emmet-vim
+        mxw/vim-jsx
         nathanaelkane/vim-indent-guides
+        pangloss/vim-javascript
         scrooloose/nerdtree
-        scrooloose/syntastic
         terryma/vim-multiple-cursors
         tpope/vim-fugitive
         vim-airline/vim-airline
         vim-airline/vim-airline-themes
+        vim-syntastic/syntastic
     )
 
     echo "Install plugins"
