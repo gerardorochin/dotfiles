@@ -55,6 +55,7 @@ set hidden
 " Buffers
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
+map <Leader>s :update<CR>
 
 " Tabs
 map <C-L> :tabn<CR>
@@ -172,5 +173,9 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_check_on_open = 1
 
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible

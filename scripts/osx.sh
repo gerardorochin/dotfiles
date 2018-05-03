@@ -11,7 +11,7 @@ set -e
 
 echo -e "OSX"
 
-echo -e "Create symbolic link ssh"
+echo -e "* Create symbolic link ssh"
 ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/ssh ~/.ssh
 ln -sf ~/Library/Mobile\ Documents/com~apple~CloudDocs/gnupg ~/.gnupg
 
@@ -20,28 +20,25 @@ os=`uname`
     # Ask for the administrator password upfront
     sudo -v
 
-    # Software Update
-    sudo softwareupdate -i -a
-
     ###############################################################################
     # General UI/UX                                                               #
     ###############################################################################
 
-    # Set computer name (as done via System Preferences → Sharing)
+    echo -e "* Set computer name (as done via System Preferences → Sharing)"
     sudo scutil --set ComputerName "0x4B1D"
     sudo scutil --set HostName "0x4B1D"
     sudo scutil --set LocalHostName "0x4B1D"
 
-    # Disable Guest user
+    echo -e "* Disable Guest user"
     sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
 
-    # Disable System UI Audio Sound Effects
+    echo -e "* Disable System UI Audio Sound Effects"
     defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
-    # Set Clock to 12 hours
+    echo -e "* Set Clock to 12 hours"
     defaults write com.apple.menuextra.clock "DateFormat" "h:mm"
 
-    # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
+    echo -e "* Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
     for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
         defaults write "${domain}" dontAutoLoad -array \
             "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
@@ -54,40 +51,39 @@ os=`uname`
         "/System/Library/CoreServices/Menu Extras/Battery.menu" \
         "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-    # Save to disk (not to iCloud) by default
+    echo -e "* Save to disk (not to iCloud) by default"
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-    # Disable the “Are you sure you want to open this application?” dialog
+    echo -e "* Disable the “Are you sure you want to open this application?” dialog"
     defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-    # Reveal IP address, hostname, OS version, etc. when clicking the clock
-    # in the login window
+    echo -e "* Reveal IP address, hostname, OS version, etc. when clicking the clock # in the login window"
     sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-    # Never go into computer sleep mode
+    echo -e "* Never go into computer sleep mode"
     sudo systemsetup -setcomputersleep Off > /dev/null
 
     ###############################################################################
     # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
     ###############################################################################
 
-    # Set a really fast key repeat.
+    echo -e "* Set a really fast key repeat."
     defaults write NSGlobalDomain KeyRepeat -int 0
 
-    # Use scroll gesture with the Ctrl (^) modifier key to zoom
+    echo -e "* Use scroll gesture with the Ctrl (^) modifier key to zoom"
     defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
     defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
-    # Disable press-and-hold for keys in favor of key repeat
+    echo -e "* Disable press-and-hold for keys in favor of key repeat"
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-    # Set a blazingly fast keyboard repeat rate
+    echo -e "* Set a blazingly fast keyboard repeat rate"
     defaults write NSGlobalDomain KeyRepeat -int 0
 
-    # Follow the keyboard focus while zoomed in
+    echo -e "* Follow the keyboard focus while zoomed in"
     defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
-    # Set language and text formats
+    echo -e "* Set language and text formats"
     # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
     # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
     defaults write NSGlobalDomain AppleLanguages -array "en" "es"
@@ -95,20 +91,20 @@ os=`uname`
     defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
     defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-    # Set the timezone; see `sudo systemsetup -listtimezones` for other values
+    echo -e "* Set the timezone"
     sudo systemsetup -settimezone "America/Mazatlan" > /dev/null
 
-    # Stop iTunes from responding to the keyboard media keys
+    echo -e "* Stop iTunes from responding to the keyboard media keys"
     launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
     ###############################################################################
     # Screen                                                                      #
     ###############################################################################
 
-    # Save screenshots to the desktop
+    echo -e "* Save screenshots to the desktop"
     defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
-    # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+    echo -e "* Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
     defaults write com.apple.screencapture type -string "png"
 
 
@@ -116,73 +112,73 @@ os=`uname`
     # Finder                                                                      #
     ###############################################################################
 
-    # Finder: show status bar
+    echo -e "* Finder: show status bar"
     defaults write com.apple.finder ShowStatusBar -bool true
 
-    # Finder: show path bar
+    echo -e "* Finder: show path bar"
     defaults write com.apple.finder ShowPathbar -bool true
 
-    # When performing a search, search the current folder by default
+    echo -e "* When performing a search, search the current folder by default"
     defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-    # Disable the warning when changing a file extension
+    echo -e "* Disable the warning when changing a file extension"
     defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-    # Avoid creating .DS_Store files on network volumes
+    echo -e "* Avoid creating .DS_Store files on network volumes"
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-    # Disable disk image verification
+    echo -e "* Disable disk image verification"
     defaults write com.apple.frameworks.diskimages skip-verify -bool true
     defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
     defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-    # Enable snap-to-grid for icons on the desktop and in other icon views
+    echo -e "* Enable snap-to-grid for icons on the desktop and in other icon views"
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-    # Increase grid spacing for icons on the desktop and in other icon views
+    echo -e "* Increase grid spacing for icons on the desktop and in other icon views"
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
 
-    # Increase the size of icons on the desktop and in other icon views
+    echo -e "* Increase the size of icons on the desktop and in other icon views"
     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
-    # Use AirDrop over every interface. srsly this should be a default.
+    echo -e "* Use AirDrop over every interface. srsly this should be a default."
     defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
     ###############################################################################
     # Dock, Dashboard, and hot corners                                            #
     ###############################################################################
 
-    # Enable highlight hover effect for the grid view of a stack (Dock)
+    echo -e "* Enable highlight hover effect for the grid view of a stack (Dock)"
     defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-    # Set the icon size of Dock items to 36 pixels
+    echo -e "* Set the icon size of Dock items to 36 pixels"
     defaults write com.apple.dock tilesize -int 36
 
-    # Change minimize/maximize window effect
+    echo -e "* Change minimize/maximize window effect"
     defaults write com.apple.dock mineffect -string "scale"
 
-    # Minimize windows into their application’s icon
+    echo -e "* Minimize windows into their application’s icon"
     defaults write com.apple.dock minimize-to-application -bool true
 
-    # Enable spring loading for all Dock items
+    echo -e "* Enable spring loading for all Dock items"
     defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
-    # Show indicator lights for open applications in the Dock
+    echo -e "* Show indicator lights for open applications in the Dock"
     defaults write com.apple.dock show-process-indicators -bool true
 
-    # Don’t animate opening applications from the Dock
+    echo -e "* Don’t animate opening applications from the Dock"
     defaults write com.apple.dock launchanim -bool false
 
-    # Don’t automatically rearrange Spaces based on most recent use
+    echo -e "* Don’t automatically rearrange Spaces based on most recent use"
     defaults write com.apple.dock mru-spaces -bool false
 
-    # Automatically hide and show the Dock
+    echo -e "* Automatically hide and show the Dock"
     defaults write com.apple.dock autohide -bool true
 
-    # Make Dock icons of hidden applications translucent
+    echo -e "* Make Dock icons of hidden applications translucent"
     defaults write com.apple.dock showhidden -bool true
 
 
@@ -190,40 +186,28 @@ os=`uname`
     # Time Machine                                                                #
     ###############################################################################
 
-    # Prevent Time Machine from prompting to use new hard drives as backup volume
+    echo -e "* Prevent Time Machine from prompting to use new hard drives as backup volume"
     defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-    # Disable local Time Machine backups
+    echo -e "* Disable local Time Machine backups"
     hash tmutil &> /dev/null && sudo tmutil disablelocal
 
     ###############################################################################
     # Activity Monitor                                                            #
     ###############################################################################
 
-    # Show the main window when launching Activity Monitor
+    echo -e "* Show the main window when launching Activity Monitor"
     defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
-    # Visualize CPU usage in the Activity Monitor Dock icon
+    echo -e "* Visualize CPU usage in the Activity Monitor Dock icon"
     defaults write com.apple.ActivityMonitor IconType -int 5
 
-    # Show all processes in Activity Monitor
+    echo -e "* Show all processes in Activity Monitor"
     defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
-    # Sort Activity Monitor results by CPU usage
+    echo -e "* Sort Activity Monitor results by CPU usage"
     defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
     defaults write com.apple.ActivityMonitor SortDirection -int 0
-
-    # iTerm
-    open ~/.dotfiles/init/Solarized\ Dark.itermcolors
-
-    ###############################################################################
-    # Kill affected applications                                                  #
-    ###############################################################################
-
-    for app in "Activity Monitor" \
-        "Dock" "Finder" "SystemUIServer"; do 
-        killall "${app}" > /dev/null 2>&1
-    done
 
     echo -e "Done. Note that some of these changes require a logout/restart to take effect.\n"
 else
