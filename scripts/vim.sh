@@ -38,6 +38,7 @@ then
         pearofducks/ansible-vim
         scrooloose/nerdtree
         terryma/vim-multiple-cursors
+        tomlion/vim-solidity
         tpope/vim-fugitive
         vim-airline/vim-airline
         vim-airline/vim-airline-themes
