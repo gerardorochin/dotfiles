@@ -23,6 +23,7 @@ if [[ $os == "Darwin" ]]; then
             bash \
             binutils \
             coreutils \
+            fzf \
             git \
             gpg \
             gpg-agent \
