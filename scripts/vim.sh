@@ -31,6 +31,7 @@ then
         airblade/vim-gitgutter
         altercation/vim-colors-solarized
         editorconfig/editorconfig-vim
+        junegunn/fzf.vim
         mattn/emmet-vim
         mxw/vim-jsx
         nathanaelkane/vim-indent-guides
