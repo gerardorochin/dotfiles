@@ -35,7 +35,6 @@ if [[ $os == "Darwin" ]]; then
             openssl \
             pinentry-mac \
             pwgen \
-            speedtest-cli \
             ssh-copy-id \
             tree \
             vim \
@@ -66,6 +65,10 @@ if [[ $os == "Darwin" ]]; then
        brew tap caskroom/fonts
        brew cask install \
            font-source-code-pro
+
+       brew tap teamookla/speedtest
+       brew update
+       brew install speedtest --force
 
        echo "Brew cleanup"
        brew cleanup
