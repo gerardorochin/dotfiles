@@ -94,3 +94,5 @@ source /usr/local/etc/grc.bashrc.default
 if [[ -x `which grc` ]]; then
     alias grc='grc --colour=auto'
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

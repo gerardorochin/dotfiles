@@ -194,3 +194,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+set rtp+=/usr/local/opt/fzf
+nmap <F2> :call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))<Enter>
+nmap <F3> :Buffers<Enter>
