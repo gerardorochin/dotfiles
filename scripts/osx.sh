@@ -7,7 +7,7 @@
 # Sets reasonable OS X defaults.
 #
 
-set -e
+set -ex
 
 echo -e "OSX"
 
@@ -190,7 +190,7 @@ os=`uname`
     defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
     echo -e "* Disable local Time Machine backups"
-    hash tmutil &> /dev/null && sudo tmutil disablelocal
+    hash tmutil &> /dev/null && sudo tmutil disable
 
     ###############################################################################
     # Activity Monitor                                                            #
