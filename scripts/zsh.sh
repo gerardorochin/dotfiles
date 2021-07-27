@@ -5,7 +5,7 @@
 # http://www.zsh.org/
 # Zsh is a shell designed for interactive use, although it is also a powerful scripting language
 #
-set -e
+set -ex
 
 echo "Zsh"
 
@@ -24,7 +24,7 @@ then
 
     if [[ ! -d ~/.oh-my-zsh ]]; then
         echo "Installing Oh my zsh:"
-        curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         # zshrc file
         ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
         source ~/.zshrc
