@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 #
 # Homebrew
 #
 # http://brew.sh/
 # The missing package manager for OS X
 #
-set -e
+set -ex
 
 echo "Homebrew"
 
@@ -15,7 +15,7 @@ if [[ $os == "Darwin" ]]; then
     if test ! $(which brew) || [[ $1 -eq "-f" ]]
     then
         echo "Installing brew core"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
         echo "Installing brew packages"
         brew install \
@@ -23,13 +23,14 @@ if [[ $os == "Darwin" ]]; then
             bash \
             binutils \
             coreutils \
-            fzf \
+            fzf	\
             git \
+            gnupg \
             gpg \
-            gpg-agent \
             grc \
             htop-osx \
             iftop \
+            jq \
             macvim \
             most \
             openssl \
@@ -37,32 +38,20 @@ if [[ $os == "Darwin" ]]; then
             pwgen \
             ssh-copy-id \
             tree \
-            vim \
-            wget \
-            zsh
-
-       brew linkapps macvim
+            wget
 
        echo "Brew cleanup"
        brew cleanup
-
-       if [[ -f /usr/local/bin/zsh ]]; then
-           echo "Enable zsh on /etc/shells"
-           echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-       fi
-
-       echo "Installing brew cask"
-       brew install caskroom/cask/brew-cask
 
        echo "Installing brew cask packages"
        brew cask install \
            google-chrome \
            iterm2 \
-           sequel-pro \
-           spotify
+           spotify \
+           postman
 
        echo "Installing brew cask fonts"
-       brew tap caskroom/fonts
+       brew tap homebrew/cask-fonts
        brew cask install \
            font-source-code-pro
 
@@ -72,8 +61,6 @@ if [[ $os == "Darwin" ]]; then
 
        echo "Brew cleanup"
        brew cleanup
-       brew cask cleanup
-
     else
         echo "Homebrew is already installed"
     fi
