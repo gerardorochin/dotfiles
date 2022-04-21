@@ -56,7 +56,7 @@ then
         cd ~/.vim/bundle
         if [[ ! -d $dest ]]; then
             echo "Installing ${plugin}"
-            git clone git://github.com/$plugin.git
+            git clone ssh://github.com/$plugin.git
         else
             echo "Plugin ${plugin} exists"
             echo "Updating.."
