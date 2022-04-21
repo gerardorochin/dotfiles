@@ -28,15 +28,18 @@ if [[ $os == "Darwin" ]]; then
             gnupg \
             gpg \
             grc \
+            helm \
             htop-osx \
             iftop \
             jq \
+            k9s \
             macvim \
             most \
             openssl \
             pinentry-mac \
             pwgen \
             ssh-copy-id \
+            stern \
             tree \
             wget
 
@@ -58,6 +61,8 @@ if [[ $os == "Darwin" ]]; then
        brew tap teamookla/speedtest
        brew update
        brew install speedtest --force
+
+       brew install hidetatz/tap/kubecolor
 
        echo "Brew cleanup"
        brew cleanup
